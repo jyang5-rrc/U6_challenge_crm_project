@@ -15,7 +15,8 @@ ActiveAdmin.register Customer do
   #   permitted
   # end
 
-  permit_params :full_name, :phone_number, :email_address, :notes, image: []
+  permit_params :full_name, :phone_number, :email_address, :notes, :image
+  #permit_params :full_name, :phone_number, :email_address, :notes, images: [] # for multiple images
 
   index do
     selectable_column
@@ -49,6 +50,7 @@ ActiveAdmin.register Customer do
       row :notes
       row :image do |customer|
         if customer.image.attached?
+        #if customer.images.attached?# for multiple images
           image_tag url_for(customer.image), width: '50%'
         else
           text_node "No image uploaded"
