@@ -1,11 +1,12 @@
+
 <div class="box">
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
-        <% if customer.image.attached? %>
+        <% if customer&.image&.attached? %>
           <%= image_tag(customer.image, class: "is-rounded", alt: customer.full_name) %>
         <% else %>
-          <p class="has-background-light has-text-grey is-size-4 p-3">No Image</p>
+          <p class="has-background-light has-text-grey is-size-6 p-3">No Image</p>
         <% end %>
       </figure>
     </div>

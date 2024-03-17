@@ -1,0 +1,9 @@
+<div class="buttons pt-5">
+  <%= link_to 'Alphabetized Customers', alphabetized_customers_path, class: 'button is-primary' %>
+  <%= link_to 'Customers Missing Email', missing_email_customers_path, class: 'button is-primary' %>
+  <%= link_to 'All Customers', customers_path, class: 'button is-primary' %>
+</div>
+
+<% @customers.each do |customer| %>
+  <%= render 'customers/customer', customer: customer %>
+<% end %>
