@@ -1,0 +1,26 @@
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <% if customer.image.attached? %>
+          <%= image_tag(customer.image, class: "is-rounded", alt: customer.full_name) %>
+        <% else %>
+          <p class="has-background-light has-text-grey is-size-4 p-3">No Image</p>
+        <% end %>
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= customer.full_name %></strong>
+          <br>
+          Phone: <%= customer.phone_number %>
+          <br>
+          Email: <%= mail_to customer.email_address %>
+          <br>
+          Notes: <%= customer.notes.presence || "No notes available" %>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
